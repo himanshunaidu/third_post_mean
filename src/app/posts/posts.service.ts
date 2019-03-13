@@ -6,6 +6,8 @@ import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
+// Redundant message
+
 @Injectable({providedIn: 'root'})
 export class PostsService {
   private posts: Post[] = [];
