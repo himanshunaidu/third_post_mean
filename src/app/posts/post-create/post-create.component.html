@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-spinner *ngIf='isloading'></mat-spinner>
+  <form [formGroup]="form" *ngIf='!isloading' (submit)='onSavePost()'>
+    <mat-form-field>
+      <!--<input matInput type="text" [(ngModel)]='enteredtitle'>-->
+      <!-- '?' mark is used in case the variable has not been initialized as a precaution-->
+      <!-- variable_name=[ngModel] will bind the field to that variable_name-->
+      <input matInput type="text" placeholder="Post Title" formControlName="title">
+      <mat-error *ngIf="!form.get('title').valid">Error! Need some input in text field</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <!--<textarea matInput rows="6" [(ngModel)]='enteredcontent'></textarea>-->
+      <textarea matInput rows="6" placeholder="Post Content" formControlName="content"></textarea>
+    </mat-form-field>
+    <hr>
+    <div class="image-preview" *ngIf="imageview !== '' && imageview && form.get('image').valid">
+      <img [src]="imageview" [alt]="form.value.title">
+    </div>
+    <div>
+      <button mat-stroked-button type='button' color='accent'
+        (click)='filePicker.click()'>Pick Image</button>
+      <input type='file' #filePicker (change)="onImageClicked($event)">
+    </div>
+
+    <hr>
+    <!--<button mat-raised-button color="primary" (click)="onAddPost()">Save Post</button>-->
+    <button mat-raised-button color="primary" type='submit' [disabled]='!form.valid'>Save Post</button>
+  </form>
+</mat-card>
+
