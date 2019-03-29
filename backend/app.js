@@ -14,7 +14,7 @@ const UserRoutes = require('./routes/user-routes');
 
 const app = express();
 
-mongoose.connect('<DATABASE_NAME>', {useNewUrlParser: true})
+mongoose.connect('mongodb://localhost:27017/post_page_2', {useNewUrlParser: true})
   .then(()=>{
     console.log('Connected to the MongoDB database');
   })
