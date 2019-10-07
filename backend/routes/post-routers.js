@@ -149,6 +149,7 @@ router.get('', (req, res, next)=>{
 });
 
 router.get('/:_id', (req, res, next)=>{
+  console.log(req.params._id);
   Post.findById(req.params._id)
   .then(post=>{
     if(post!=null){

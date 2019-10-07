@@ -5,6 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm run start:server` for a dev server of backend. This runs a nodemon server for the node backend
 
 ## Code scaffolding
 
@@ -30,3 +31,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 If you want to use Angular CLI with this project, create a new Angular CLI project and then add all the relevant files from this project to the new one. You need to install the following modules:
 @angular/material, express, body-parser, mongoose
 Use npm install --save _module_ to install the above modules
+
+## Mongo DB url
+In backend/app.js, update the MONGODB URL to the one you desire
